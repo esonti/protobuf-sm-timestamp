@@ -1,0 +1,16 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/timestamp-impl/proto/gen/go
+    except:
+      - buf.build/googleapis/googleapis
+plugins:
+  - plugin: buf.build/protocolbuffers/cpp
+    out: proto/gen/cpp
+  - plugin: buf.build/grpc/cpp
+    out: proto/gen/cpp
+inputs:
+  - git_repo: https://github.com/YOUR_USERNAME/timestamp-api.git
+    branch: main
+    subdir: .

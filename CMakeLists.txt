@@ -4,7 +4,7 @@ project(timestamp_service)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Find required packages
+# Don't use FetchContent - use system packages only
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(Protobuf REQUIRED)

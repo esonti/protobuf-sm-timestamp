@@ -1,0 +1,10 @@
+version: v1
+name: buf.build/shared-api-poc/timestamp-impl
+deps:
+  - buf.build/shared-api-poc/timestamp-api
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
