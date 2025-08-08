@@ -40,8 +40,8 @@ brew install cmake protobuf grpc
 
 1. Clone the repository with API submodule:
 ```bash
-git clone --recursive <timestamp-impl-repo>
-cd timestamp-impl
+git clone --recursive <protobuf-sm-timestamp-repo>
+cd protobuf-sm-timestamp
 ```
 
 2. Copy proto files from central registry:

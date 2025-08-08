@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(timestamp_service)
+project(protobuf_sm_timestamp_service)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -50,7 +50,7 @@ target_link_libraries(proto_lib ${Protobuf_LIBRARIES} gRPC::grpc++ gRPC::grpc++_
 # Source files
 set(SOURCES
     src/main.cpp
-    src/timestamp_service_impl.cpp
+    src/protobuf_sm_timestamp_service_impl.cpp
     src/server.cpp
 )
 

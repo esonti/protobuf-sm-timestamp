@@ -1,16 +1,22 @@
-version: v1
+version: v2
+# Code generation for Timestamp C++ Implementation
+# Generates code for APIs this service implements and consumes
 managed:
   enabled: true
-  go_package_prefix:
-    default: github.com/timestamp-impl/proto/gen/go
-    except:
-      - buf.build/googleapis/googleapis
+  optimize_for: SPEED
+  cpp_out:
+    enabled: true
 plugins:
-  - plugin: buf.build/protocolbuffers/cpp
-    out: proto/gen/cpp
-  - plugin: buf.build/grpc/cpp
-    out: proto/gen/cpp
+  # C++ code generation
+  - remote: buf.build/protocolbuffers/cpp
+    out: generated/cpp
+    opt:
+      - lite_runtime=false
+  # gRPC C++ code generation  
+  - remote: buf.build/grpc/cpp
+    out: generated/cpp
 inputs:
-  - git_repo: https://github.com/YOUR_USERNAME/timestamp-api.git
+  # Generate from GitHub API repository
+  - git_repo: https://github.com/esonti/protobuf-sm-timestamp-api.git
     branch: main
     subdir: .

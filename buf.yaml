@@ -1,7 +1,12 @@
-version: v1
-name: buf.build/shared-api-poc/timestamp-impl
+version: v2
+# Timestamp C++ Implementation
+# Uses buf CLI to fetch APIs directly from GitHub
+modules:
+  - path: .
+    name: buf.build/esonti/timestamp-impl
 deps:
-  - buf.build/shared-api-poc/timestamp-api
+  # Fetch timestamp API directly from GitHub
+  - github.com/esonti/protobuf-sm-timestamp-api
 breaking:
   use:
     - FILE
