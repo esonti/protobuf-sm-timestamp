@@ -3,15 +3,10 @@ version: v2
 # Generates code for APIs this service implements and consumes
 managed:
   enabled: true
-  optimize_for: SPEED
-  cpp_out:
-    enabled: true
 plugins:
   # C++ code generation
   - remote: buf.build/protocolbuffers/cpp
     out: generated/cpp
-    opt:
-      - lite_runtime=false
   # gRPC C++ code generation  
   - remote: buf.build/grpc/cpp
     out: generated/cpp
